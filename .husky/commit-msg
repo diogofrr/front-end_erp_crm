@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx --no-install commitlint --edit "$1"
+if [ $? -ne 0 ]; then
+	echo "Commit message does not follow the conventional commit format."
+	echo "Please refer to the documentation for more information."
+	exit 1
+fi
+echo "Commit message is valid."
+echo "Proceeding with commit..."

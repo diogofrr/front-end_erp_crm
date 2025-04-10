@@ -1,0 +1,1 @@
+Todos os hooks que foram criados para ajudar no desenvolvimento da aplicação.
