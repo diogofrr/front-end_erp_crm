@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
+import '@/styles/auth/login/login-footer/style.css';
+
 const LoginFooter = () => {
   return (
-    <footer className="absolute bottom-0 w-full text-center p-4 text-sm text-gray-600">
-      <div className="flex justify-center items-center gap-2">
+    <footer className="login-footer">
+      <div className="login-footer__content">
         <span>
           Feito por <Link href="https://github.com/diogofrr">diogofrr</Link>
         </span>

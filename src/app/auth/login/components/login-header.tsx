@@ -1,8 +1,10 @@
+import '@/styles/auth/login/login-header/style.css';
+
 const LoginHeader = () => {
   return (
-    <header className="flex justify-between items-center p-6">
-      <div className="flex items-center">
-        <h1 className="text-xl font-bold">Sistema CRM</h1>
+    <header className="login-header">
+      <div className="login-header__brand">
+        <h1 className="login-header__title">Sistema CRM</h1>
       </div>
     </header>
   );

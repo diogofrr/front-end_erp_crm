@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@import '../../brand/theme.css';
+
+.main-container {
+  @apply min-h-screen bg-[--color-background] relative overflow-hidden;
+}

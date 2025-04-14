@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+@import '../../../brand/theme.css';
+
+.login-footer {
+  @apply absolute bottom-0 w-full text-center p-4 text-sm text-gray-600;
+}
+
+.login-footer__content {
+  @apply flex justify-center items-center gap-2;
+}

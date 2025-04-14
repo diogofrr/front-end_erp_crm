@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 
 import { type LayoutProps } from '@/types/root';
 
+import { Providers } from './provider';
+import { Toaster } from 'sonner';
+
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
@@ -17,7 +20,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="pt-BR">
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased`}>
+        <Toaster richColors closeButton position="top-right" />
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
