@@ -3,6 +3,8 @@
 import { type ErrorData } from '@/types/globals';
 import { type LoginArgs, type LoginResponse } from '@/types/auth/login/login';
 
+import { saveSession } from '@/lib/session';
+
 type Response = LoginResponse | ErrorData;
 
 export default async function authUser(
@@ -21,11 +23,16 @@ export default async function authUser(
   };
 
   const response = await fetch(url, requestOptions);
-  const parsedData: Response = await response.json();
+  const parsedData: LoginResponse = await response.json();
 
-  if ('statusCode' in parsedData) {
-    throw new Error(parsedData.message);
+  if (response.status !== 201 && response.status !== 200) {
+    throw new Error(
+      parsedData.message ||
+        'Houve uma instabilidade no servidor. Tente novamente mais tarde.'
+    );
   }
+
+  await saveSession(parsedData.result.access_token);
 
   return parsedData;
 }

@@ -7,7 +7,7 @@ interface LoginArgs {
 
 interface LoginResponse extends ResponseData {
   result: {
-    accessToken: string;
+    access_token: string;
     user: User;
   };
 }
