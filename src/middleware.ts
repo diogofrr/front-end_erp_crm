@@ -25,7 +25,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/dashboard', request.url));
   }
 
-  if (pathname.startsWith('/(protected)') || pathname.includes('/dashboard')) {
+  if (pathname === '/' || pathname.includes('/dashboard')) {
     if (!jwtCookie) {
       return NextResponse.redirect(new URL('/login', request.url));
     }
@@ -37,7 +37,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     '/((?!_next/|public/|.*\\..*|favicon.ico|android-chrome-.*|apple-touch-icon.*|site.webmanifest).*)',
-    '/(protected)/:path*',
     '/dashboard/:path*',
     '/login',
   ],
