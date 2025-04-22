@@ -3,7 +3,7 @@
 import { type ErrorData } from '@/types/globals';
 import { type LoginArgs, type LoginResponse } from '@/types/auth/login/login';
 
-import { saveSession } from '@/lib/session';
+import { saveAuthToken, saveSession } from '@/lib/session';
 
 type Response = LoginResponse | ErrorData;
 
@@ -32,7 +32,8 @@ export default async function authUser(
     );
   }
 
-  await saveSession(parsedData.result.access_token);
+  await saveAuthToken(parsedData.result.access_token);
+  await saveSession(parsedData.result.user);
 
   return parsedData;
 }

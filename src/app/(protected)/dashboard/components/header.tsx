@@ -1,31 +1,27 @@
-import { Bell, ChevronDown, Filter } from 'lucide-react';
+'use client';
+
+import { ChevronDown, Menu } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useSidebar } from '@/hooks/(protected)/use-sidebar';
 
 const Header = () => {
+  const { handleOpenSidebar } = useSidebar();
+
   return (
     <header className="flex h-16 items-center gap-4 border-b bg-white px-6 sticky top-0 z-10">
-      <div className="flex items-center gap-2 text-sm text-gray-500">
-        <a href="#" className="hover:text-red-600 text-gray-700">
-          Dashboard
-        </a>
-        <span>/</span>
-        <span className="text-red-600 font-medium">Eventos</span>
-      </div>
+      <Button
+        variant="ghost"
+        size="icon"
+        className="lg:hidden"
+        onClick={handleOpenSidebar}
+        aria-label="Menu"
+      >
+        <Menu className="size-5" />
+      </Button>
 
       <div className="ml-auto flex items-center gap-4">
-        <Button
-          variant="outline"
-          size="sm"
-          className="gap-2 border-gray-200 text-gray-700 rounded-lg"
-        >
-          <Filter className="h-3.5 w-3.5" />
-          Filtrar
-        </Button>
-        <Button variant="ghost" size="icon" className="rounded-full">
-          <Bell className="h-5 w-5 text-gray-500" />
-        </Button>
         <div className="flex items-center gap-2">
           <Avatar className="h-8 w-8">
             <AvatarImage

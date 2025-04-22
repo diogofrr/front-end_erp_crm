@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import { type LayoutProps } from '@/types/root';
 
-import { Providers } from './provider';
+import Provider from './provider';
 import { Toaster } from 'sonner';
 
 import '../styles/globals.css';
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps) {
     <html lang="pt-BR">
       <body className={`antialiased`}>
         <Toaster richColors closeButton position="top-right" />
-        <Providers>{children}</Providers>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
