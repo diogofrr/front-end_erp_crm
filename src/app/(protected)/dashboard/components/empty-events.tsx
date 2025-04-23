@@ -8,9 +8,9 @@ const EmptyEvents = () => {
       <div className="empty-events-icon-wrapper">
         <Calendar className="empty-events-icon" />
       </div>
-      <h3 className="empty-events-title">Nenhum evento finalizado</h3>
+      <h3 className="empty-events-title">Nenhum evento encontrado</h3>
       <p className="empty-events-description">
-        Quando seus eventos forem concluídos, eles aparecerão aqui para você
+        Quando houver eventos cadastrados, eles aparecerão aqui para você
         analisar os resultados.
       </p>
     </div>

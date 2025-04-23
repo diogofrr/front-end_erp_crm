@@ -18,7 +18,7 @@
 }
 
 .event-card-icon-button {
-  @apply rounded-full h-8 w-8 text-gray-400 hover:text-gray-600;
+  @apply rounded-full size-8 text-gray-400 hover:text-gray-600 cursor-pointer;
 }
 
 .event-card-content {
@@ -31,10 +31,6 @@
 
 .event-card-info-value {
   @apply font-medium;
-}
-
-.event-card-separator {
-  @apply my-3 bg-gray-100;
 }
 
 .event-card-income {
@@ -50,7 +46,7 @@
 }
 
 .event-card-button {
-  @apply w-full bg-red-600 hover:bg-red-700 rounded-lg h-10 font-medium;
+  @apply w-full bg-red-600 hover:bg-red-700 rounded-lg h-10 font-medium cursor-pointer;
 }
 
 /* Badges dinâmicas */
@@ -58,6 +54,14 @@
   @apply bg-green-100 text-green-700 hover:bg-green-100;
 }
 
-.badge-status-default {
+.badge-status-incoming {
   @apply bg-blue-100 text-blue-700 hover:bg-blue-100;
+}
+
+.badge-status-canceled {
+  @apply bg-red-100 text-red-700 hover:bg-red-100;
+}
+
+.badge-status-finished {
+  @apply bg-green-100 text-green-700 hover:bg-green-100;
 }

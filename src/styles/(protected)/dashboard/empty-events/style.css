@@ -2,7 +2,7 @@
 @import '../../../brand/theme.css';
 
 .empty-events-container {
-  @apply rounded-xl border border-dashed p-10 text-center bg-white;
+  @apply rounded-xl border border-dashed border-gray-600 p-10 text-center bg-white;
 }
 
 .empty-events-icon-wrapper {

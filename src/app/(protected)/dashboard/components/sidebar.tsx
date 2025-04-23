@@ -59,11 +59,11 @@ const Sidebar = () => {
             </Button>
           </nav>
 
-          <div className="mt-8 px-3">
+          <div className="mt-8 px-3 hidden">
             <div className="sidebar-card">
               <div className="sidebar-card-header">
                 <div className="sidebar-card-icon">
-                  <Clock className="h-4 w-4 text-red-600" />
+                  <Clock className="size-4 text-red-600" />
                 </div>
                 <div>
                   <h3 className="sidebar-card-title">Próximo evento</h3>

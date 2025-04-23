@@ -14,7 +14,7 @@
 }
 
 .tabs-list {
-  @apply bg-white border rounded-lg p-1.5 shadow-sm md:w-[360px] min-w-0 w-full;
+  @apply bg-white border border-gray-100 rounded-lg p-1.5 shadow-sm md:w-[360px] min-w-0 w-full;
 }
 
 .tabs-trigger {

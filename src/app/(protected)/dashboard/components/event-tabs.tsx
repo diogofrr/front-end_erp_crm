@@ -1,38 +1,25 @@
-import { ArrowDown } from 'lucide-react';
+'use client';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import EventCard from './event-card';
 import EmptyEvents from './empty-events';
 
 import '@/styles/(protected)/dashboard/event-tabs/style.css';
+import { useEvents } from '@/hooks/(protected)/dashboard/use-events';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const EventTabs = () => {
-  const events = [
-    {
-      id: 1,
-      name: 'Workshop de Marketing',
-      date: '12 Jun, 2024',
-      status: 'Em andamento',
-    },
-    {
-      id: 2,
-      name: 'Conferência Tech',
-      date: '18 Jun, 2024',
-      status: 'Em breve',
-    },
-    {
-      id: 3,
-      name: 'Feira de Negócios',
-      date: '25 Jun, 2024',
-      status: 'Em breve',
-    },
-    {
-      id: 4,
-      name: 'Feira de Gado',
-      date: '27 Ago, 2024',
-      status: 'Em breve',
-    },
-  ];
+  const { events, ongoingBadges, finishedBadges, isLoading } = useEvents();
+
+  const ongoing = events.filter((e) => ongoingBadges.includes(e.status.color));
+
+  const finished = events.filter((e) =>
+    finishedBadges.includes(e.status.color)
+  );
+
+  if (isLoading) {
+    return <Skeleton className="h-[70dvh] w-full" />;
+  }
 
   return (
     <div className="tabs-wrapper">
@@ -55,28 +42,43 @@ const EventTabs = () => {
         </div>
 
         <TabsContent value="em-andamento" className="tabs-content">
-          <div className="tabs-grid">
-            {events.map((event) => (
-              <EventCard
-                key={event.id}
-                id={event.id}
-                name={event.name}
-                date={event.date}
-                status={event.status}
-              />
-            ))}
-          </div>
-
-          <div className="tabs-load-more-wrapper">
-            <button className="tabs-load-more-button">
-              <span>Ver mais eventos</span>
-              <ArrowDown size={16} />
-            </button>
-          </div>
+          {ongoing.length > 0 ? (
+            <div className="tabs-grid">
+              {ongoing.map((event) => (
+                <EventCard
+                  key={event.id}
+                  id={event.id}
+                  name={event.name}
+                  date={event.date}
+                  status={event.status}
+                  price={event.price}
+                  totalTickets={event.totalTickets}
+                />
+              ))}
+            </div>
+          ) : (
+            <EmptyEvents />
+          )}
         </TabsContent>
 
-        <TabsContent value="finalizados" className="mt-0">
-          <EmptyEvents />
+        <TabsContent value="finalizados" className="tabs-content">
+          {finished.length > 0 ? (
+            <div className="tabs-grid">
+              {finished.map((event) => (
+                <EventCard
+                  key={event.id}
+                  id={event.id}
+                  name={event.name}
+                  date={event.date}
+                  status={event.status}
+                  price={event.price}
+                  totalTickets={event.totalTickets}
+                />
+              ))}
+            </div>
+          ) : (
+            <EmptyEvents />
+          )}
         </TabsContent>
       </Tabs>
     </div>
