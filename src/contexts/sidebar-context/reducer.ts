@@ -13,7 +13,7 @@ const reducer = (
     case actions.CHANGE_SIDEBAR:
       return {
         ...state,
-        user: action.payload,
+        isOpen: action.payload,
       };
     default:
       return state;

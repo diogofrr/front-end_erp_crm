@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import type { User } from '@/types/auth/login/login';
 
 interface AuthContextInitialState {
   user: User | null;
@@ -9,12 +10,12 @@ interface AuthContextActions {
 }
 
 type AuthContextActionsTypes = {
-  type: typeof AuthContextActions.SAVE_USER_DATA;
+  type: AuthContextActions['SAVE_USER_DATA'];
   payload: User;
 };
 
 interface AuthContextType {
-  state: AuthContextInitialData;
+  state: AuthContextInitialState;
   saveUserData: (user: User) => void;
 }
 

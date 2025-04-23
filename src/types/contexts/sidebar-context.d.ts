@@ -9,7 +9,7 @@ interface SidebarContextActions {
 }
 
 type SidebarContextActionsTypes = {
-  type: typeof AuthContextActions.CHANGE_SIDEBAR;
+  type: SidebarContextActions['CHANGE_SIDEBAR'];
   payload: boolean;
 };
 
