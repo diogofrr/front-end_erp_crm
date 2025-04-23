@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+@import '../../../brand/theme.css';
+
+.event-card {
+  @apply overflow-hidden border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow;
+}
+
+.event-card-header {
+  @apply pb-3 pt-4 px-5;
+}
+
+.event-card-title {
+  @apply text-lg font-semibold;
+}
+
+.event-card-date {
+  @apply text-sm text-gray-500 mt-1;
+}
+
+.event-card-icon-button {
+  @apply rounded-full h-8 w-8 text-gray-400 hover:text-gray-600;
+}
+
+.event-card-content {
+  @apply pb-3 px-5;
+}
+
+.event-card-info-label {
+  @apply text-sm text-gray-500;
+}
+
+.event-card-info-value {
+  @apply font-medium;
+}
+
+.event-card-separator {
+  @apply my-3 bg-gray-100;
+}
+
+.event-card-income {
+  @apply text-sm text-gray-500;
+}
+
+.event-card-income-value {
+  @apply font-semibold text-red-600;
+}
+
+.event-card-footer {
+  @apply pt-2 pb-5 px-5;
+}
+
+.event-card-button {
+  @apply w-full bg-red-600 hover:bg-red-700 rounded-lg h-10 font-medium;
+}
+
+/* Badges dinâmicas */
+.badge-status-in-progress {
+  @apply bg-green-100 text-green-700 hover:bg-green-100;
+}
+
+.badge-status-default {
+  @apply bg-blue-100 text-blue-700 hover:bg-blue-100;
+}

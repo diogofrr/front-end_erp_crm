@@ -1,31 +1,36 @@
+import { LogOut } from 'lucide-react';
+
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { LogOut } from 'lucide-react';
+
 import { clearSession } from '@/lib/session';
+
 import { useSession } from '@/hooks/auth/use-session';
+
+import '@/styles/(protected)/dashboard/user-profile/style.css';
 
 const UserProfile = () => {
   const { session } = useSession();
 
   return (
-    <div className="flex items-center gap-3">
-      <Avatar className="size-9">
+    <div className="user-profile">
+      <Avatar className="avatar">
         <AvatarImage src="/placeholder.svg?height=36&width=36" alt="Avatar" />
         <AvatarFallback>{session?.name.charAt(0)}</AvatarFallback>
       </Avatar>
-      <div className="flex-1">
-        <p className="text-sm font-medium">{session?.name}</p>
-        <p className="text-xs text-gray-500">{session?.email}</p>
+      <div className="user-info">
+        <p className="user-name">{session?.name}</p>
+        <p className="user-email">{session?.email}</p>
       </div>
       <Button
         variant="ghost"
         size="icon"
-        className="rounded-full size-8 cursor-pointer"
+        className="logout-btn"
         onClick={async () => {
           await clearSession();
         }}
       >
-        <LogOut className="h-4 w-4 text-gray-500" />
+        <LogOut className="logout-icon" />
       </Button>
     </div>
   );

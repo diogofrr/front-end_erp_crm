@@ -1,6 +1,10 @@
+import { ArrowDown } from 'lucide-react';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import EventCard from './event-card';
 import EmptyEvents from './empty-events';
+
+import '@/styles/(protected)/dashboard/event-tabs/style.css';
 
 const EventTabs = () => {
   const events = [
@@ -22,36 +26,36 @@ const EventTabs = () => {
       date: '25 Jun, 2024',
       status: 'Em breve',
     },
+    {
+      id: 4,
+      name: 'Feira de Gado',
+      date: '27 Ago, 2024',
+      status: 'Em breve',
+    },
   ];
 
   return (
-    <div className="mx-auto">
-      <Tabs defaultValue="em-andamento" className="w-full">
-        <div className="flex items-center justify-between mb-6">
-          <TabsList className="bg-white border rounded-lg p-1.5 shadow-sm min-w-[360px]">
-            <TabsTrigger
-              value="em-andamento"
-              className="hover:cursor-pointer rounded-md px-4 py-3 text-sm font-medium data-[state=active]:bg-red-50 data-[state=active]:text-red-600 transition-all"
-            >
+    <div className="tabs-wrapper">
+      <Tabs defaultValue="em-andamento" className="tabs-container">
+        <div className="tabs-header">
+          <TabsList className="tabs-list">
+            <TabsTrigger value="em-andamento" className="tabs-trigger">
               Em andamento
             </TabsTrigger>
-            <TabsTrigger
-              value="finalizados"
-              className="hover:cursor-pointer rounded-md px-4 py-3 text-sm font-medium data-[state=active]:bg-red-50 data-[state=active]:text-red-600 transition-all"
-            >
+            <TabsTrigger value="finalizados" className="tabs-trigger">
               Finalizados
             </TabsTrigger>
           </TabsList>
 
-          <div className="text-sm text-gray-500">
+          <div className="tabs-event-counter">
             Mostrando{' '}
-            <span className="font-medium text-gray-700">{events.length}</span>{' '}
+            <span className="tabs-event-counter-strong">{events.length}</span>{' '}
             eventos
           </div>
         </div>
 
-        <TabsContent value="em-andamento" className="mt-0 space-y-6">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <TabsContent value="em-andamento" className="tabs-content">
+          <div className="tabs-grid">
             {events.map((event) => (
               <EventCard
                 key={event.id}
@@ -63,31 +67,10 @@ const EventTabs = () => {
             ))}
           </div>
 
-          <div className="flex justify-center mt-8">
-            <button className="text-sm text-red-600 font-medium hover:text-red-700 flex items-center gap-2">
+          <div className="tabs-load-more-wrapper">
+            <button className="tabs-load-more-button">
               <span>Ver mais eventos</span>
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8 3.33334V12.6667"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M12.6667 8L8.00004 12.6667L3.33337 8"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <ArrowDown size={16} />
             </button>
           </div>
         </TabsContent>

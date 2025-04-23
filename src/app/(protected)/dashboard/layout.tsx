@@ -4,14 +4,16 @@ import Sidebar from './components/sidebar';
 
 import { LayoutProps } from '@/types/root';
 
+import '@/styles/(protected)/dashboard/style.css';
+
 export default function DashboardLayout({ children }: LayoutProps) {
   return (
     <Provider>
-      <div className="flex h-screen overflow-hidden">
+      <div className="dashboard-wrapper">
         <Sidebar />
-        <div className="flex flex-1 flex-col overflow-hidden">
+        <div className="dashboard-content">
           <Header />
-          <main className="flex-1 overflow-auto p-6">{children}</main>
+          <main className="dashboard-main">{children}</main>
         </div>
       </div>
     </Provider>

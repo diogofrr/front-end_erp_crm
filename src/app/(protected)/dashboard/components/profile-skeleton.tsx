@@ -1,23 +1,25 @@
+import { LogOut } from 'lucide-react';
+
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 
-import { LogOut } from 'lucide-react';
+import '@/styles/(protected)/dashboard/profile-skeleton/style.css';
 
 const ProfileSkeleton = () => {
   return (
-    <div className="flex items-center gap-3">
-      <Skeleton className="size-9 rounded-full" />
-      <div className="flex-1">
-        <Skeleton className="h-4 w-24 mb-1" />
-        <Skeleton className="h-3 w-32" />
+    <div className="profile-skeleton">
+      <Skeleton className="profile-skeleton-avatar" />
+      <div className="profile-skeleton-info">
+        <Skeleton className="profile-skeleton-name" />
+        <Skeleton className="profile-skeleton-username" />
       </div>
       <Button
         variant="ghost"
         size="icon"
-        className="rounded-full size-8 cursor-pointer"
+        className="profile-skeleton-logout-button"
         disabled
       >
-        <LogOut className="h-4 w-4 text-gray-300" />
+        <LogOut className="profile-skeleton-logout-icon" />
       </Button>
     </div>
   );
