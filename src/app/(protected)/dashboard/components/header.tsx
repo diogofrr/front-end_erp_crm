@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import HeaderSkeleton from './header-skeleton';
 
-import { useSidebar } from '@/hooks/(protected)/use-sidebar';
+import { useSidebar } from '@/hooks/protected/use-sidebar';
 import { useSession } from '@/hooks/auth/use-session';
 
 import '@/styles/(protected)/dashboard/header/style.css';

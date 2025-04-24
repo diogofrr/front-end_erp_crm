@@ -1,7 +1,7 @@
 'use server';
 
 import { getAuthToken } from '@/lib/session';
-import { type GetEventsResponse } from '@/types/(protected)/dashboard/get-events';
+import { type GetEventsResponse } from '@/types/protected/dashboard/get-events';
 
 export default async function getEvents(): Promise<GetEventsResponse> {
   const url = `${process.env.NEXT_PUBLIC_API_URL}/events`;

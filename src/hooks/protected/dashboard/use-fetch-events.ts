@@ -2,10 +2,10 @@
 
 import { useQuery } from '@tanstack/react-query';
 
-import getEvents from '@/services/(protected)/dashboard/get-events';
+import getEvents from '@/services/protected/dashboard/get-events';
 
-import { type EventStatus } from '@/types/(protected)/dashboard/get-events';
-import { type TransformedEvent } from '@/types/(protected)/dashboard/use-fetch-events';
+import { type EventStatus } from '@/types/protected/dashboard/get-events';
+import { type TransformedEvent } from '@/types/protected/dashboard/use-fetch-events';
 
 const getStatusText = (status: EventStatus) => {
   switch (status) {

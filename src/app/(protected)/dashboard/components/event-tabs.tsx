@@ -5,7 +5,7 @@ import EventCard from './event-card';
 import EmptyEvents from './empty-events';
 
 import '@/styles/(protected)/dashboard/event-tabs/style.css';
-import { useEvents } from '@/hooks/(protected)/dashboard/use-events';
+import { useEvents } from '@/hooks/protected/dashboard/use-events';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const EventTabs = () => {

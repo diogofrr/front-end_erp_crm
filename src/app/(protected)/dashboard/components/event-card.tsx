@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/card';
 import '@/styles/(protected)/dashboard/event-card/style.css';
 
-import type { EventCardProps } from '@/types/(protected)/dashboard/event-card';
+import type { EventCardProps } from '@/types/protected/dashboard/event-card';
 
 const EventCard = ({
   id,

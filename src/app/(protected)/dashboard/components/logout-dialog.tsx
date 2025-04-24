@@ -10,7 +10,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { useSession } from '@/hooks/auth/use-session';
-import { type LogoutDialogProps } from '@/types/(protected)/dashboard/logout-dialog';
+import { type LogoutDialogProps } from '@/types/protected/dashboard/logout-dialog';
 
 const LogoutDialog = ({
   open,
