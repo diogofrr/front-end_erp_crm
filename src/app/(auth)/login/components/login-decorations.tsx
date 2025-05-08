@@ -3,7 +3,7 @@ import Image from 'next/image';
 import RedRose from '@/../public/assets/red-rose.svg';
 import GreenRose from '@/../public/assets/green-rose.svg';
 
-import generateBackgroundElementPositions from '@/utils/generateBackgroundElementPositions';
+import { generateBackgroundElementPositions } from '@/utils/generateBackgroundElementPositions';
 
 const LoginDecorations = () => {
   const rosePositions = generateBackgroundElementPositions(15);

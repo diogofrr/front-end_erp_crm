@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import '@/styles/(protected)/dashboard/event-card/style.css';
+import '@/styles/protected/dashboard/event-card/style.css';
 
 import type { EventCardProps } from '@/types/protected/dashboard/event-card';
 

@@ -3,7 +3,7 @@ import { LogOut } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 
-import '@/styles/(protected)/dashboard/profile-skeleton/style.css';
+import '@/styles/protected/dashboard/profile-skeleton/style.css';
 
 const ProfileSkeleton = () => {
   return (

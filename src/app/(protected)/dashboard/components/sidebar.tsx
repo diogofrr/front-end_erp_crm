@@ -11,7 +11,7 @@ import ProfileSkeleton from './profile-skeleton';
 import { useSession } from '@/hooks/auth/use-session';
 import { useSidebar } from '@/hooks/protected/use-sidebar';
 
-import '@/styles/(protected)/dashboard/sidebar/style.css';
+import '@/styles/protected/dashboard/sidebar/style.css';
 
 const Sidebar = () => {
   const { session } = useSession();

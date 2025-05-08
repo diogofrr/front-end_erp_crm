@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "commit": "cz",
+    "test": "jest --watchAll",
     "postinstall": "chmod +x .husky/* && chmod +x .husky/_/husky.sh"
   },
   "dependencies": {
@@ -44,9 +45,14 @@
     "@commitlint/config-conventional": "^19.8.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^29.5.14",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "babel-jest": "^29.7.0",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9",
@@ -54,9 +60,12 @@
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
     "tailwindcss": "^4",
+    "ts-jest": "^29.3.2",
     "typescript": "^5"
   },
   "lint-staged": {

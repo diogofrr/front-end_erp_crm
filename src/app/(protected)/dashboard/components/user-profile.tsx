@@ -6,7 +6,7 @@ import { LogoutDialog } from './logout-dialog';
 import { useSession } from '@/hooks/auth/use-session';
 import { useDialog } from '@/hooks/protected/use-dialog';
 
-import '@/styles/(protected)/dashboard/user-profile/style.css';
+import '@/styles/protected/dashboard/user-profile/style.css';
 
 const UserProfile = () => {
   const { session } = useSession();

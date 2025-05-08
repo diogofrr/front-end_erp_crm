@@ -4,7 +4,7 @@ import Sidebar from './components/sidebar';
 
 import { LayoutProps } from '@/types/root';
 
-import '@/styles/(protected)/dashboard/style.css';
+import '@/styles/protected/dashboard/style.css';
 
 export default function DashboardLayout({ children }: LayoutProps) {
   return (

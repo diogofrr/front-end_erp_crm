@@ -1,5 +1,5 @@
 import EventTabs from './components/event-tabs';
-import '@/styles/(protected)/dashboard/style.css';
+import '@/styles/protected/dashboard/style.css';
 
 export default function DashboardPage() {
   return (

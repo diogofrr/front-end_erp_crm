@@ -1,10 +1,13 @@
 import { Calendar } from 'lucide-react';
 
-import '@/styles/(protected)/dashboard/empty-events/style.css';
+import '@/styles/protected/dashboard/empty-events/style.css';
 
 const EmptyEvents = () => {
   return (
-    <div className="empty-events-container">
+    <div
+      className="empty-events-container"
+      data-testid="empty-events-container"
+    >
       <div className="empty-events-icon-wrapper">
         <Calendar className="empty-events-icon" />
       </div>

@@ -47,12 +47,14 @@ const LoginForm = () => {
         <form
           onSubmit={handleSubmit(handleSubmitLogin)}
           className="login-form__form"
+          noValidate
         >
           <div>
             <Input
               {...register('email')}
               className={`login-form__input ${errors.email && 'login-form__input--error'}`}
               placeholder="Insira seu e-mail"
+              data-testid="email-input"
               type="email"
             />
             {errors.email && (
@@ -67,6 +69,7 @@ const LoginForm = () => {
                 className={`login-form__input pr-10 ${errors.password && 'login-form__input--error'}`}
                 placeholder="Insira sua senha"
                 type={passwordVisibility ? 'text' : 'password'}
+                data-testid="passsword-input"
                 autoComplete="current-password"
               />
               <Button
@@ -98,6 +101,7 @@ const LoginForm = () => {
             type="submit"
             className="login-form__submit"
             disabled={isPending}
+            data-testid="submit-button"
           >
             {isPending ? 'Carregando...' : 'Entrar'}
           </Button>

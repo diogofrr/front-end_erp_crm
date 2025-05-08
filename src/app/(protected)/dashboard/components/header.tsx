@@ -9,7 +9,7 @@ import HeaderSkeleton from './header-skeleton';
 import { useSidebar } from '@/hooks/protected/use-sidebar';
 import { useSession } from '@/hooks/auth/use-session';
 
-import '@/styles/(protected)/dashboard/header/style.css';
+import '@/styles/protected/dashboard/header/style.css';
 
 const Header = () => {
   const { handleOpenSidebar } = useSidebar();
@@ -35,9 +35,13 @@ const Header = () => {
                 src="/placeholder.svg?height=32&width=32"
                 alt="Avatar"
               />
-              <AvatarFallback>{session.name.charAt(0)}</AvatarFallback>
+              <AvatarFallback data-testid="header-avatar-fallback">
+                {session.name.charAt(0)}
+              </AvatarFallback>
             </Avatar>
-            <span className="header-username">{session.name}</span>
+            <span className="header-username" data-testid="header-username">
+              {session.name}
+            </span>
             <ChevronDown className="header-chevron" />
           </div>
         ) : (

@@ -54,7 +54,7 @@
 }
 
 .login-form__submit {
-  @apply w-full h-12 rounded-full bg-[#B22222] hover:bg-[#8B0000] text-white font-medium;
+  @apply size-12 rounded-full bg-[#B22222] hover:bg-[#8B0000] text-white font-medium cursor-pointer;
 }
 
 .login-form__register {

@@ -31,4 +31,4 @@ const generateBackgroundElementPositions = (count: number) => {
   return positions;
 };
 
-export default generateBackgroundElementPositions;
+export { generateBackgroundElementPositions };

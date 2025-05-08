@@ -4,11 +4,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import EventCard from './event-card';
 import EmptyEvents from './empty-events';
 
-import '@/styles/(protected)/dashboard/event-tabs/style.css';
+import '@/styles/protected/dashboard/event-tabs/style.css';
 import { useEvents } from '@/hooks/protected/dashboard/use-events';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useState } from 'react';
 
 const EventTabs = () => {
+  const [selectedTab, setSelectedTab] = useState('em-andamento');
   const { events, ongoingBadges, finishedBadges, isLoading } = useEvents();
 
   const ongoing = events.filter((e) => ongoingBadges.includes(e.status.color));
@@ -17,27 +19,47 @@ const EventTabs = () => {
     finishedBadges.includes(e.status.color)
   );
 
+  const currentCount =
+    selectedTab === 'em-andamento' ? ongoing.length : finished.length;
+
   if (isLoading) {
-    return <Skeleton className="h-[70dvh] w-full" />;
+    return (
+      <Skeleton
+        className="h-[70dvh] w-full"
+        data-testid="event-tabs-skeleton"
+      />
+    );
   }
 
   return (
     <div className="tabs-wrapper">
-      <Tabs defaultValue="em-andamento" className="tabs-container">
+      <Tabs
+        defaultValue="em-andamento"
+        className="tabs-container"
+        onValueChange={setSelectedTab}
+      >
         <div className="tabs-header">
           <TabsList className="tabs-list">
-            <TabsTrigger value="em-andamento" className="tabs-trigger">
+            <TabsTrigger
+              value="em-andamento"
+              className="tabs-trigger"
+              data-testid="event-tabs-trigger-ongoing"
+            >
               Em andamento
             </TabsTrigger>
-            <TabsTrigger value="finalizados" className="tabs-trigger">
+            <TabsTrigger
+              value="finalizados"
+              className="tabs-trigger"
+              data-testid="event-tabs-trigger-finished"
+            >
               Finalizados
             </TabsTrigger>
           </TabsList>
 
           <div className="tabs-event-counter">
             Mostrando{' '}
-            <span className="tabs-event-counter-strong">{events.length}</span>{' '}
-            eventos
+            <span className="tabs-event-counter-strong">{currentCount}</span>{' '}
+            evento(s)
           </div>
         </div>
 

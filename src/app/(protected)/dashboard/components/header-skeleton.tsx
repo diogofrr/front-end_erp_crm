@@ -1,6 +1,6 @@
 import { Skeleton } from '@/components/ui/skeleton';
 
-import '@/styles/(protected)/dashboard/header-skeleton/style.css';
+import '@/styles/protected/dashboard/header-skeleton/style.css';
 
 const HeaderSkeleton = () => {
   return (
