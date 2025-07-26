@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+@import '../../../../../styles/brand/theme.css';
+
+.profile-skeleton {
+  @apply flex items-center gap-3;
+}
+
+.profile-skeleton-avatar {
+  @apply size-9 rounded-full;
+}
+
+.profile-skeleton-info {
+  @apply flex-1;
+}
+
+.profile-skeleton-name {
+  @apply h-4 w-24 mb-1;
+}
+
+.profile-skeleton-username {
+  @apply h-3 w-32;
+}
+
+.profile-skeleton-logout-button {
+  @apply rounded-full size-8 cursor-pointer;
+}
+
+.profile-skeleton-logout-icon {
+  @apply h-4 w-4 text-gray-300;
+} 

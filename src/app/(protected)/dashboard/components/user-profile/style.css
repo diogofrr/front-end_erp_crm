@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+@import '../../../../../styles/brand/theme.css';
+
+.user-profile {
+  @apply flex items-center gap-3;
+}
+
+.avatar {
+  @apply size-9;
+}
+
+.user-info {
+  @apply flex-1;
+}
+
+.user-name {
+  @apply text-sm font-medium;
+}
+
+.user-email {
+  @apply text-xs text-gray-500;
+}
+
+.logout-btn {
+  @apply rounded-full size-8 cursor-pointer;
+}
+
+.logout-icon {
+  @apply h-4 w-4 text-gray-500;
+} 
