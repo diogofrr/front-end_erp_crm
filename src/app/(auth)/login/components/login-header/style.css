@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+@import '../../../../../styles/brand/theme.css';
+
+.login-header {
+  @apply flex justify-between items-center p-6;
+}
+
+.login-header__brand {
+  @apply flex items-center;
+}
+
+.login-header__title {
+  @apply text-xl font-bold;
+} 

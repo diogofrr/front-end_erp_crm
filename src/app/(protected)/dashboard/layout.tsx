@@ -1,6 +1,6 @@
+import Header from './components/header/index';
+import Sidebar from './components/sidebar/index';
 import Provider from './provider';
-import Header from './components/header';
-import Sidebar from './components/sidebar';
 
 import { LayoutProps } from '@/types/root';
 

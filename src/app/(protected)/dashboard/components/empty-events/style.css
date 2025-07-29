@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+@import '../../../../../styles/brand/theme.css';
+
+.empty-events-container {
+  @apply rounded-xl border border-dashed border-gray-600 p-10 text-center bg-white;
+}
+
+.empty-events-icon-wrapper {
+  @apply mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-gray-100;
+}
+
+.empty-events-icon {
+  @apply size-6 text-gray-500;
+}
+
+.empty-events-title {
+  @apply text-lg font-medium text-gray-900 mb-1;
+}
+
+.empty-events-description {
+  @apply text-gray-500 max-w-md mx-auto;
+}
