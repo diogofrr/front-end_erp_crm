@@ -27,9 +27,9 @@ export const useFetchEvents = () => {
     queryKey: ['events'],
     queryFn: getEvents,
     select: (data) => {
-      if (!data?.result) return [] as TransformedEvent[];
+      if (!data.result) return [] as TransformedEvent[];
 
-      return data.result.map((event) => ({
+      return data.result.data.map((event) => ({
         id: event.id,
         name: event.name,
         status: getStatusText(event.status),

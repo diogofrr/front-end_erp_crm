@@ -18,8 +18,23 @@ interface Event {
   totalTickets: number;
 }
 
-interface GetEventsResponse extends ResponseData {
-  result: Event[];
+interface Meta {
+  total: number;
+  perPage: number;
+  currentPage: number;
+  lastPage: number;
+  firstPage: number;
+  firstPageUrl: string;
+  lastPageUrl: string;
+  nextPageUrl: string;
+  previousPageUrl: string;
 }
 
-export { Event, GetEventsResponse, EventStatus };
+interface GetEventsResponse extends ResponseData {
+  result: {
+    data: Event[];
+    meta: Meta;
+  };
+}
+
+export { Event, EventStatus, GetEventsResponse };

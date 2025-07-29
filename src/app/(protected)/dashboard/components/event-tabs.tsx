@@ -1,12 +1,12 @@
 'use client';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import EventCard from './event-card';
 import EmptyEvents from './empty-events';
+import EventCard from './event-card';
 
-import '@/styles/protected/dashboard/event-tabs/style.css';
-import { useEvents } from '@/hooks/protected/dashboard/use-events';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useEvents } from '@/hooks/protected/dashboard/use-events';
+import '@/styles/protected/dashboard/event-tabs/style.css';
 import { useState } from 'react';
 
 const EventTabs = () => {
@@ -18,6 +18,9 @@ const EventTabs = () => {
   const finished = events.filter((e) =>
     finishedBadges.includes(e.status.color)
   );
+
+  console.log('ongoing', ongoing);
+  console.log('finished', finished);
 
   const currentCount =
     selectedTab === 'em-andamento' ? ongoing.length : finished.length;
