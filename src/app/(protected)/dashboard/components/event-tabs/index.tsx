@@ -19,6 +19,9 @@ const EventTabs = () => {
     finishedBadges.includes(e.status.color)
   );
 
+  console.log('ongoing', ongoing);
+  console.log('finished', finished);
+
   const currentCount =
     selectedTab === 'em-andamento' ? ongoing.length : finished.length;
 
